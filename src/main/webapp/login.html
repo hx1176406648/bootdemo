@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/bootstrap/3.3.6/bootstrap.css">
+    <script type="text/javascript" src="js/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#login").click(function () {
+                var href="user/login";
+                $("#formdelete").attr("action",href).submit();
+                return false;
+            })
+        });
+    </script>
+</head>
+<body>
+<h1>用户登录</h1>
+
+<p></p><br><br><br><br>
+
+<form method="post" action="" id="formdelete" style="width: 50%">
+    用户名:<input name="userName" class="form-control"><br>
+    密码:<input name="passWord" class="form-control" type="password"><br>
+    <button type="submit" class="btn btn-primary" id="login">登录</button><br>
+    <span>     <a href="regis.html">没有账号，现在注册</a>    </span>
+</form>
+</body>
+</html>

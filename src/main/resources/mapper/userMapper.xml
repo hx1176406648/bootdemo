@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.bootdemo.dao.UserDAO">
+    <select id="userLogin" parameterType="User" resultType="User">
+        select * from user where userName = #{userName} and passWord = #{passWord}
+    </select>
+
+    <insert id="addUser" parameterType="User">
+        insert into user values (null,#{userName},#{passWord},#{addr},#{phone});
+    </insert>
+
+    <update id="testQuery" parameterType="TestQuery">
+        update user set addr = '家？' where passWord = #{testFiled}
+    </update>
+
+    <delete id="deleteTest" parameterType="java.lang.Integer">
+        delete from user where id = #{id}
+    </delete>
+</mapper>

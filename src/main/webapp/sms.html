@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>即时性格记录仪</title>
+    <link rel="stylesheet" href="css/bootstrap/3.3.6/bootstrap.css">
+    <script type="text/javascript" src="js/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            /*$("#login").click(function () {
+                var href="user/login";
+                $("#formdelete").attr("action",href).submit();
+                return false;
+            })*/
+        });
+        
+        function sendCode() {
+            $.post("/bootdemo/sendCode?phone=" + $("#phone").val().trim(),function (res) {
+                alert(res);
+            });
+        }
+    </script>
+</head>
+<body>
+<h1>sms消息测试</h1>
+
+<p></p><br><br><br><br>
+
+<form method="post" action="testSms" id="formdelete" style="width: 50%;text-indent: 10px">
+    <p>我的名字:   <input name="userName" style="width: 20%;display: inline-block" class="form-control"></p>
+    <p>请输入手机号:   <input id="phone" name="phone" style="width: 20%;display: inline-block" class="form-control"><span><a href="#" onclick="sendCode()">  发送验证码</a></span></p>
+    <p>验证码:  <input name="checkCode" style="width: 20%;display: inline-block" class="form-control"></p>
+    &nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary" id="login" >开始测试</button><br>
+</form>
+</body>
+</html>

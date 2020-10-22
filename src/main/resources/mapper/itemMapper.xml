@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.bootdemo.dao.ItemDAO">
+    <select id="listInfo" resultType="Item">
+        select * from item;
+    </select>
+
+    <insert id="addInfo" parameterType="Item">
+        insert into item values (null,#{name},#{price},#{count},#{maxLimit});
+    </insert>
+
+    <select id="getOne" parameterType="java.lang.Integer" resultType="Item">
+        select * from item where id = #{id};
+    </select>
+
+    <update id="updateInfo" parameterType="Item">
+        update item set name = #{name},price = #{price},count = #{count},maxLimit = #{maxLimit} where id = #{id};
+    </update>
+
+    <delete id="deleteInfo" parameterType="java.lang.Integer">
+        delete from item where id = #{id}
+    </delete>
+</mapper>
