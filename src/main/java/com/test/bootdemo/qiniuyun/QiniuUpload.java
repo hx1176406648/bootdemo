@@ -44,7 +44,7 @@ public class QiniuUpload {
         Auth auth = Auth.create(accessKey, secretKey);
         String upToken = auth.uploadToken(bucket);
         try {
-            Response response = uploadManager.put("C:\\Users\\user\\Desktop\\teset.jpg", "teset.jpg", upToken);
+            Response response = uploadManager.put("C:\\Users\\user\\Desktop\\a3.jpg", null, upToken);
             //解析上传成功的结果
             DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
             return putRet.key;
@@ -62,6 +62,6 @@ public class QiniuUpload {
         return null;
     }
     public static void main(String[] args){
-        uploadQiniu(null);
+        System.out.println(VariableName.domain + "/" + uploadQiniu(null));
     }
 }

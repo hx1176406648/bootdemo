@@ -17,7 +17,7 @@ public class FilterConfig {
         return registration;
     }
 
-    @Bean
+    //@Bean
     public FilterRegistrationBean registLogFilter() {
         FilterRegistrationBean registration = new FilterRegistrationBean();
         registration.setFilter(new LogUrlFilter());
